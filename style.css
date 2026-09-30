@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    background-color: #757761;
+    text-align: center;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+main {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem 1rem;
+}
+
+main > h1 {
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    color: #1c1d18;
+}
+
+/* Game container */
+.container {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+/* Winner message */
+#win {
+    display: none;
+
+    width: min(90vw, 455px);
+    min-height: 150px;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+
+    border-radius: 0.5rem;
+
+    background-color: rgba(28, 29, 24, 0.9);
+    color: #f5f5f5;
+
+    font-size: 2.5rem;
+}
+
+/* Tic Tac Toe board */
+.game {
+    width: min(90vw, 455px);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1.1rem;
+}
+
+/* Boxes */
+.box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    border-radius: 0.5rem;
+    border: none;
+
+    background-color: #f5f5f5;
+    color: #757761;
+
+    font-size: clamp(2rem, 9vw, 3.5rem);
+    font-weight: bold;
+    font-family: inherit;
+
+    cursor: pointer;
+}
+
+.box:disabled {
+    cursor: default;
+}
+
+.box:focus-visible {
+    outline: 3px solid #1c1d18;
+    outline-offset: 3px;
+}
+
+.box.win {
+    background-color: #c6cbae;
+}
+
+/* Reset + New Game */
+.btn {
+    display: flex;
+    gap: 1.5rem;
+
+    margin-top: 1.5rem;
+
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.reset,
+.newg {
+    padding: 0.8rem 1.5rem;
+
+    border: none;
+    border-radius: 0.5rem;
+
+    background-color: #1c1d18;
+    color: #f5f5f5;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: inherit;
+}
+
+.reset:focus-visible,
+.newg:focus-visible {
+    outline: 3px solid #f5f5f5;
+    outline-offset: 3px;
+}
